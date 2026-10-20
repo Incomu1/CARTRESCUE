@@ -1,0 +1,40 @@
+{
+  "semilla": 20261019,
+  "repeticiones": 5,
+  "umbrales": {
+    "tasa_recuperacion_minima": 0.15,
+    "cumplimiento_politica_minimo": 1.0,
+    "intervenciones_duplicadas_maximas": 0
+  },
+  "metricas": {
+    "oportunidades_totales": 60,
+    "intervenciones_totales": 20,
+    "recuperados_totales": 7,
+    "tasa_recuperacion": 0.35,
+    "ingresos_recuperados": 875,
+    "costo_incentivo": 8.91,
+    "bloqueos_politica": 40,
+    "cumplimiento_politica": 1.0,
+    "intervenciones_duplicadas": 0,
+    "meta_cumplida": true,
+    "meta_politica_cumplida": true
+  },
+  "posteriores": {
+    "correo": [
+      3.0,
+      7.0
+    ],
+    "notificacion_push": [
+      3.0,
+      8.0
+    ],
+    "incentivo": [
+      3.0,
+      8.0
+    ],
+    "recomendacion": [
+      10.0,
+      18.0
+    ]
+  }
+}

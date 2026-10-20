@@ -1,0 +1,26 @@
+sequenceDiagram
+    actor U as Usuario / contexto sintetico
+    participant CLI as CLI local
+    participant X as Experimento
+    participant A as AgenteRescateCarritos
+    participant E as Entorno estocastico
+    participant S as Servicio externo
+
+    U->>CLI: ejecuta --todo --repeticiones 5 --semilla 20261019
+    CLI->>X: run(eescenarios_predeterminados(), 5)
+    loop 5 repeticiones x 12 eescenarios
+        X->>A: decide(ContextoCarrito)
+        A->>A: eligibility() y puntuar utilidad
+        alt politica bloquea
+            A-->>X: Decision(none, motivo)
+            X->>X: log carrito_detectado + decision
+        else eescenario elegible
+            A-->>X: Decision(accion, utilidad)
+            X->>E: _outcome(eescenario, decision)
+            E-->>X: Resultado(recuperado/no)
+            X->>X: log accion_ejecutada + resultado_observado
+            X->>A: learn(accion, recuperado)
+        end
+    end
+    Note over X,S: Servicio externo no invocado; canal_sintetico=True solo representa la accion.
+    X-->>CLI: CSV, JSON y NDJSON

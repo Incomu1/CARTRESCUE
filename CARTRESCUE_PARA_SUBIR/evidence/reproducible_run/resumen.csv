@@ -1,0 +1,12 @@
+metrica,valor
+oportunidades_totales,60
+intervenciones_totales,20
+recuperados_totales,7
+tasa_recuperacion,0.35
+ingresos_recuperados,875
+costo_incentivo,8.91
+bloqueos_politica,40
+cumplimiento_politica,1.0
+intervenciones_duplicadas,0
+meta_cumplida,True
+meta_politica_cumplida,True
